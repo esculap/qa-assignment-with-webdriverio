@@ -2,24 +2,15 @@
 
 ### WebdriverIO-v8 boilerplate code with Cucumber BDD
 
-This repository contains a collection of sample webdriverIO-v8 (Selenium - Node.js/JavaScript) projects and libraries that demonstrate how to use the tool and develop automation script using the CucumberJS BDD framework. It uses the `chromedriver` NPM package that wraps the ChromeDriver for you. This service does not require a Selenium server, but uses ChromeDriver to communicate with the browser directly.
 
-This boilerplate code support Typescript, also provides sample utilities to read data from MS-Excel, executes SQL statements to any database (RDBMS such as Oracle, TeraData, MySQL, Vertica) for end to end testing. It generate Allure, JSON, Junit/Xunit, Spec reporters as well. `Please note that at the time of writing (January 2023) the wdio reporting module of JSON, Junit/Xunit are not fully compatible with V8 hence it is disabled from this boilerplate code.`
-
-💡 If you need the wdio-v7 boilerplate project, please take the code from v7 branch: click [here](https://github.com/amiya-pattnaik/webdriverIO-with-cucumberBDD/tree/wdio-v7)
 
 ### Installation
 
-This project is tested on **Node v18.0.0** and above.  While earlier versions of node may be compatible, but they have not been verified.
 
 `Node.JS:` Install  from the site - https://nodejs.org/en/  take the LTS version based on your Operating system. Please make sure you install NodeJS globally. To take full advantage of the command line you will need to make sure that you have added `node_modules/.bin` to your `$PATH`.  Otherwise you will need to install `npm install -g` globally.
 
 
 `JDK:` It is optional, install JDK and make sure class path is set properly. JAVA is require to start `Selenium Server` on your local environment nothing else.
-
-### Selenium, Appium
-
-To run your test you must have Selenium / Appium server up and running to execute any webdriverIO tests, or it will fail fast with an error. To start selenium automatically it has been added as part of `services: ['selenium-standalone']` and `services: ['appium']` in the `*.conf.ts`.  That's all there is to it.!.
 
 ### Run Some Sample Tests
 
@@ -27,27 +18,12 @@ To execute the entire test suite on local development or cloud provider, you can
 
 Option 1: Local Environment `npm run test-local`.
 
-Option 2: You can also run on `SauceLabs` or  `BrowserStack` or `LambdaTest` using `npm run test-sauce` or `npm run test-browserstack` or `npm run test-browserstack` or `npm run test-lambdatest`.
 
-Option 3: Mobile Device. To execute tests on mobile device use : `npm run test-mobile`.
-
-💡 Before running mobile tests, perform the requisite Appium setup. For hassle free `one click Appium setup on OSX` refer [appium-setup-made-easy-OSX](https://github.com/amiya-pattnaik/appium-setup-made-easy-OSX) or refer [Appium Docs](http://appium.io/getting-started.html?lang=en)
-
-### Config Files
-
-WebdriverIO uses configuration files to setup and execute tests in specific ways.  The configuration is fully customizable, and different functions can be invoked before, during and after each test or test suite.  Config files are found in the `the root directory of this boilerplate project.`and all ends with `*.conf.ts`.  These can be called via the the cli.
-
-### SauceLabs, BrowserStack and LambdaTest Integration
-
-`SauceLabs`,  `BrowserStack` and `lambdatest` specific code has been added in the `wdio.sauce.conf.ts`,  `wdio.browserstack.conf.ts` and `wdio.lambdatest.conf.ts` under the /test/config folder. You just need to provide your SauceLabs/BrowserStack/LambdaTest credentials in the config file. To run test on SauceLabs, execute command `npm run test-sauce` to run test on BrowserStack `npm run test-browserstack`, to run test on LambdaTest `npm run test-lambdatest`.
 
 ### Logs  
 
 Complete set of execution `logs` will be generated during the run time and can be found in the parent folder location /logs.
 
-### Reporters
-
-WebdriverIO uses several different types of test reporters to communicate pass/failure.  
 
 ##### Allure
 
@@ -56,14 +32,8 @@ The Allure Reporter creates [Allure](https://docs.qameta.io/allure/) test report
 To generate and view an Allure report inside your corp network or locally, run `npm run allure-report`. The Allure report is hosted on a `web server` and can be accessed through http://YourMachineIP:5050/ and also generated locally which can be found at `./allure-report/index.html`. A typical Allure report will look like this.
 ![ScreenShot](https://github.com/amiya-pattnaik/snapshots/blob/master/allure-report.png)
 
-##### Junit/Xunit
 
-To generate and view the Junit/Xunit report inside your corp network or locally, run `npm run xunit-report`.  The Junit/Xunit report is hosted on a `web server` and can be accessed through http://YourMachineIP:3000/ and also generated locally which can be found at `./xunit-report/xunit-report.html`. A typical Junit/Xunit report will look like this.
-![ScreenShot](https://github.com/amiya-pattnaik/snapshots/blob/master/xunit-report.png)
 
-##### Dot
-
-To use the dot reporter just add 'dot' to the reporters array in the config file. The dot reporter prints for each test spec a dot. If colors are enabled on your machine you will see three different colors for dots. Yellow dots mean that at least one browser has executed that spec. A green dot means all browser passed that spec and a red to means that at least one browser failed that spec. All config files have this turned on by default.
 
 ##### Spec
 
